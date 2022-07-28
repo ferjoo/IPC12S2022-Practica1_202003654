@@ -2,17 +2,20 @@ import java.util.Scanner;
 import java.util.InputMismatchException;
 public class Main {
     public static void main(String[] args) {
-        Scanner sn = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         boolean exit = false;
         int menuOption;
         Menu menu = new Menu();
         do{
             menu.mainMenu();
             try {
-                menuOption = sn.nextInt();
+                menuOption = scanner.nextInt();
                 switch (menuOption) {
                     case 1:
                         menu.aritmeticasMenu();
+                        int selectedOption = scanner.nextInt();
+                        Aritmeticas aritmeticas = new Aritmeticas();
+                        aritmeticas.aritmeticas(selectedOption);
                         break;
                     case 2:
                         menu.trigonometricasMenu();
@@ -31,7 +34,7 @@ public class Main {
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Valor invalido, ingresa un numero");
-                sn.next();
+                scanner.next();
             }
         }
         while (!exit) ;
