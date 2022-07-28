@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
         System.out.println("IPC12S2022-Practica1_202003654");
@@ -18,7 +17,9 @@ public class Main {
 
         switch(selectedMenu) {
             case 1:
-                //do logic
+                System.out.println("seleccionaste aritmeticas paps");
+                Aritmeticas aritmeticas = new Aritmeticas();
+                aritmeticas.main();
                 break;
             case 2:
                 //do logic
