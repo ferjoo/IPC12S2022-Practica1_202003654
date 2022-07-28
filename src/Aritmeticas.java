@@ -1,5 +1,5 @@
 public class Aritmeticas {
-    public static void main() {
+    public static void aritmeticas() {
         System.out.println("Aritmeticas paps");
     }
 }

@@ -1,34 +1,40 @@
 import java.util.Scanner;
+import java.util.InputMismatchException;
 public class Main {
     public static void main(String[] args) {
-        System.out.println("IPC12S2022-Practica1_202003654");
-        Scanner Scanner = new Scanner(System.in);
-        int selectedMenu = -1;
-        while(selectedMenu < 1 || selectedMenu > 3) {
-            System.out.println("===MENU===");
-            System.out.println("1. Aritmeticas");
-            System.out.println("2. Trigonometricas");
-            System.out.println("3. Estadisticas");
-            System.out.println("4. Calculo");
-            System.out.println("5. Salir");
-            if(Scanner.hasNextInt())
-                selectedMenu = Scanner.nextInt();
+        Scanner sn = new Scanner(System.in);
+        boolean exit = false;
+        int menuOption;
+        Menu menu = new Menu();
+        do{
+            menu.mainMenu();
+            try {
+                menuOption = sn.nextInt();
+                switch (menuOption) {
+                    case 1:
+                        menu.aritmeticasMenu();
+                        break;
+                    case 2:
+                        menu.trigonometricasMenu();
+                        break;
+                    case 3:
+                        menu.estadisticaMenu();
+                        break;
+                    case 4:
+                        menu.calculoMenu();
+                        break;
+                    case 5:
+                        exit = true;
+                        break;
+                    default:
+                        System.out.println("Unicamente son validos los números entre 1 y 5");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Valor invalido, ingresa un numero");
+                sn.next();
+            }
         }
-
-        switch(selectedMenu) {
-            case 1:
-                System.out.println("seleccionaste aritmeticas paps");
-                Aritmeticas aritmeticas = new Aritmeticas();
-                aritmeticas.main();
-                break;
-            case 2:
-                //do logic
-                break;
-            case 3:
-                //do logic
-                break;
-            default:
-                selectedMenu = -1;
-        }
+        while (!exit) ;
     }
+
 }
