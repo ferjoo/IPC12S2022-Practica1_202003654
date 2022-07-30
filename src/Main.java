@@ -11,9 +11,9 @@ public class Main {
             menu.mainMenu();
             try {
                 menuOption = scanner.nextInt();
+                int selectedOption;
                 switch (menuOption) {
                     case 1:
-                        int selectedOption;
                         do {
                             menu.aritmeticasMenu();
                             selectedOption = scanner.nextInt();
@@ -22,13 +22,28 @@ public class Main {
                         } while (selectedOption != 6);
                         break;
                     case 2:
-                        menu.trigonometricasMenu();
+                        do {
+                            menu.trigonometricasMenu();
+                            selectedOption = scanner.nextInt();
+                            Trigonometricas trigonometricas = new Trigonometricas();
+                            trigonometricas.trigonometricas(selectedOption);
+                        } while (selectedOption != 4);
                         break;
                     case 3:
-                        menu.estadisticaMenu();
+                        do {
+                            menu.estadisticaMenu();
+                            selectedOption = scanner.nextInt();
+                            Estadistica estadistica = new Estadistica();
+                            estadistica.estadistica(selectedOption);
+                        } while (selectedOption != 6);
                         break;
                     case 4:
-                        menu.calculoMenu();
+                        do {
+                            menu.calculoMenu();
+                            selectedOption = scanner.nextInt();
+                            Calculo calculo = new Calculo();
+                            calculo.calculo(selectedOption);
+                        } while (selectedOption != 2);
                         break;
                     case 5:
                         exit = true;
