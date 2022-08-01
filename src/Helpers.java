@@ -8,7 +8,7 @@ public class Helpers {
         } while ((result - root) != 0);
         return root;
     }
-    public static int pow(int base, int exponent) {
+    public static int pow(double base, double exponent) {
         int result = 1;
         for (int i = 0; i < exponent; i++) {
             result *= base;
