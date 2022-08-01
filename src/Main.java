@@ -52,8 +52,7 @@ public class Main {
                         System.out.println("Unicamente son validos los números entre 1 y 5");
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Valor invalido, ingresa un numero");
-                scanner.next();
+                throw new InputMismatchException("Unicamente son validos valores numericos");
             }
         }
         while (!exit) ;
