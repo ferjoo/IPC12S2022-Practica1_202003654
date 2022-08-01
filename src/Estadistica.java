@@ -29,7 +29,7 @@ public class Estadistica {
             case 5:
                 separateData();
                 calcVariance();
-                System.out.println("La desviacion estandar es: " + String.format("%.2f", Math.sqrt(variance)));
+                System.out.println("La desviacion estandar es: " + String.format("%.2f", Helpers.sqrt(variance)));
                 break;
             default:
                 break;
