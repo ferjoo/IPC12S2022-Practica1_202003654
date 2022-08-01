@@ -1,5 +1,5 @@
 public class Helpers {
-    public static double sqrt(int number) {
+    public static double sqrt(double number) {
         double result;
         double root = number / 2;
         do {
