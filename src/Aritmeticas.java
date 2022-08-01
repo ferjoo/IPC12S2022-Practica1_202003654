@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class Aritmeticas {
     static Scanner scanner = new Scanner(System.in);
     public static void aritmeticas(int selectedOption) {
-
         switch (selectedOption) {
             case 1:
                 suma();
@@ -24,13 +23,13 @@ public class Aritmeticas {
     }
 
     private static void potencia() {
-        System.out.println("=== DIVISION ===");
+        System.out.println("=== POTENCIA ===");
         System.out.println("Ingrese la base");
         double value1  = scanner.nextDouble();
         System.out.println("Ingrese el exponente");
         double value2  = scanner.nextDouble();
         if(value2 != 0) {
-            double result = Math.pow(value1, value2);
+            double result = Helpers.pow(value1, value2);
             System.out.println("El resultado es: " + result);
 
         } else {
