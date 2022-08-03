@@ -26,7 +26,7 @@ public class Main {
                             menu.trigonometricasMenu();
                             selectedOption = scanner.nextInt();
                             Trigonometricas trigonometricas = new Trigonometricas();
-                            trigonometricas.trigonometricas(selectedOption);
+                            trigonometricas.selectTrigonometricas(selectedOption);
                         } while (selectedOption != 4);
                         break;
                     case 3:
