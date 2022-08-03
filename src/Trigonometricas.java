@@ -5,17 +5,19 @@ public class Trigonometricas {
     static double x;
     static int n;
     public static void selectTrigonometricas(int selectedOption) {
-        getNAndX();
         switch (selectedOption) {
             case 1:
+                getNAndX();
                 System.out.println("sin con math = " + Math.sin(x));
                 System.out.println("sin(x) = " +  sinWithMaclaurinSeries(x, n));
                 break;
             case 2:
+                getNAndX();
                 System.out.println("cos con math = " + Math.cos(x));
                 System.out.println("cos(x) = " + cosWithMaclaurinSeries(x, n));
                 break;
             case 3:
+                getNAndX();
                 System.out.println("Tangente con math" + Math.tan(x));
                 System.out.println("tan(x) = " + tangent(sinWithMaclaurinSeries(x, n), cosWithMaclaurinSeries(x, n)));
                 break;
