@@ -15,8 +15,10 @@ public class Aritmeticas {
                 break;
             case 4:
                 division();
+                break;
             case 5:
                 potencia();
+                break;
             default:
                 break;
         }
