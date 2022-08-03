@@ -7,26 +7,29 @@ public class Estadistica {
     static double average = 0;
     static double variance = 0;
     public static void estadistica(int selectedOption) {
-        ingresarDatos();
-
         switch (selectedOption) {
             case 1:
+                ingresarDatos();
                 separateData();
                 System.out.println("El promedio es: " + average);
                 break;
             case 2:
+                ingresarDatos();
                 separateData();
                 System.out.println("La media es: " + average);
                 break;
             case 3:
+                ingresarDatos();
                  moda();
                  break;
             case 4:
+                ingresarDatos();
                 separateData();
                 calcVariance();
                 System.out.println("La varianza es: " + String.format("%.2f", variance));
                 break;
             case 5:
+                ingresarDatos();
                 separateData();
                 calcVariance();
                 System.out.println("La desviacion estandar es: " + String.format("%.2f", Helpers.sqrt(variance)));
