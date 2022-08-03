@@ -8,8 +8,8 @@ public class Helpers {
         } while ((result - root) != 0);
         return root;
     }
-    public static int pow(double base, double exponent) {
-        int result = 1;
+    public static double pow(double base, double exponent) {
+        double result = 1;
         for (int i = 0; i < exponent; i++) {
             result *= base;
         }
