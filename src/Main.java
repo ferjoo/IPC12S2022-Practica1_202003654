@@ -4,21 +4,29 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         boolean exit = false;
-        boolean exitSubmenu = false;
         int menuOption;
         Menu menu = new Menu();
+        // loop for main menu until exit is selected
         do{
+            // invoke menu to show options
             menu.mainMenu();
+            // try catch for invalid characters in selections and operations
             try {
                 menuOption = scanner.nextInt();
                 int selectedOption;
                 switch (menuOption) {
                     case 1:
+                        // internal loop for submenu until exit option is selected
                         do {
+                            // invoke menu to show options
                             menu.aritmeticasMenu();
+                            // input for menu option
                             selectedOption = scanner.nextInt();
+                            // invoke method to the internal class operation options
                             Aritmeticas aritmeticas = new Aritmeticas();
+                            // send selected option to internal class
                             aritmeticas.aritmeticas(selectedOption);
+                            // break loop if exit option is selected
                         } while (selectedOption != 6);
                         break;
                     case 2:
@@ -52,9 +60,11 @@ public class Main {
                         System.out.println("Unicamente son validos los números entre 1 y 5");
                 }
             } catch (InputMismatchException e) {
+                // InputMismatchException is thrown when the user enters a character instead of a number
                 throw new InputMismatchException("Unicamente son validos valores numericos");
             }
         }
+        // break loop if exit option is selected
         while (!exit) ;
     }
 

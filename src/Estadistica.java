@@ -7,6 +7,7 @@ public class Estadistica {
     static double average = 0;
     static double variance = 0;
     public static void estadistica(int selectedOption) {
+
         switch (selectedOption) {
             case 1:
                 ingresarDatos();
@@ -44,6 +45,7 @@ public class Estadistica {
     }
 
     private static void  separateData() {
+        // Separate the data by comma with the split
         dataCounter=0;
         totalData=0;
         for (String number : data.split(",")) {
@@ -60,12 +62,14 @@ public class Estadistica {
         for (String number : data.split(",")) {
             int num = Integer.parseInt(number);
             int sumNumberTotal = 0;
+            // for each number, count the number of times it appears in the data
             for (String numberLoop : data.split(",")) {
                 int numLoop = Integer.parseInt(numberLoop);
                 if (num == numLoop && num != higherNumber) {
                     sumNumberTotal++;
                 }
             }
+            // check the temporary number of times it appears in the data and compare it with the higher number of times it appears in the data
             if(sumNumberTotal > totalHigherNumer) {
                 totalHigherNumer = sumNumberTotal;
                 higherNumber=num;

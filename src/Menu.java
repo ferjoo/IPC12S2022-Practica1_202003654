@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class Menu {
+    // public methods for each different menu option
     public static void mainMenu() {
         System.out.println("=== MENU ===");
         System.out.println("1. Aritmeticas");

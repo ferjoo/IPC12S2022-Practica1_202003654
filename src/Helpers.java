@@ -1,4 +1,5 @@
 public class Helpers {
+    // Helper function for common operations in the whole project
     public static double sqrt(double number) {
         double result;
         double root = number / 2;
