@@ -42,7 +42,8 @@ public class Calculo {
                 piv++;
             }
             for (int x = 0; x < m; x++) {
-                System.out.println("La variable X" + (x + 1) + " es: " + matriz[x][m]);
+                //print the value of each row
+                System.out.println("X" + (x + 1) + "= " + matriz[x][m]);
             }
         } else {
             System.out.println("Debe tener la misma cantidad de filas y columnas");
@@ -52,19 +53,20 @@ public class Calculo {
     static void pivotMatrix(float matrix[][], int pivot, int var) {
         float temporalMatrix = 0;
         temporalMatrix = matrix[pivot][pivot];
-        for (int y = 0; y < (var + 1); y++) {
+        for (int i = 0; i < (var + 1); i++) {
             // using formula Rx = Rx / Rxx
-            matrix[pivot][y] = matrix[pivot][y] / temporalMatrix;
+            matrix[pivot][i] = matrix[pivot][i] / temporalMatrix;
         }
     }
 
     static void increaseMatrix(float matrix[][], int pivot, int var) {
         for (int x = 0; x < var; x++) {
             if (x != pivot) {
-                float c = matrix[x][pivot];
-                for (int z = 0; z < (var + 1); z++) {
+                //setting the diagonal value of the matrix
+                float pivMatrixCell = matrix[x][pivot];
+                for (int i = 0; i < (var + 1); i++) {
                     // increasing the matrix with the formula Rx = -anchor * Rx + Rx
-                    matrix[x][z] = ((-1 * c) * matrix[pivot][z]) + matrix[x][z];
+                    matrix[x][i] = ((-1 * pivMatrixCell) * matrix[pivot][i]) + matrix[x][i];
                 }
             }
         }
