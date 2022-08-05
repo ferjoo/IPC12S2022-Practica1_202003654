@@ -4,27 +4,46 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         boolean exit = false;
+        boolean exitSubmenu = false;
         int menuOption;
         Menu menu = new Menu();
         do{
             menu.mainMenu();
             try {
                 menuOption = scanner.nextInt();
+                int selectedOption;
                 switch (menuOption) {
                     case 1:
-                        menu.aritmeticasMenu();
-                        int selectedOption = scanner.nextInt();
-                        Aritmeticas aritmeticas = new Aritmeticas();
-                        aritmeticas.aritmeticas(selectedOption);
+                        do {
+                            menu.aritmeticasMenu();
+                            selectedOption = scanner.nextInt();
+                            Aritmeticas aritmeticas = new Aritmeticas();
+                            aritmeticas.aritmeticas(selectedOption);
+                        } while (selectedOption != 6);
                         break;
                     case 2:
-                        menu.trigonometricasMenu();
+                        do {
+                            menu.trigonometricasMenu();
+                            selectedOption = scanner.nextInt();
+                            Trigonometricas trigonometricas = new Trigonometricas();
+                            trigonometricas.trigonometricas(selectedOption);
+                        } while (selectedOption != 4);
                         break;
                     case 3:
-                        menu.estadisticaMenu();
+                        do {
+                            menu.estadisticaMenu();
+                            selectedOption = scanner.nextInt();
+                            Estadistica estadistica = new Estadistica();
+                            estadistica.estadistica(selectedOption);
+                        } while (selectedOption != 6);
                         break;
                     case 4:
-                        menu.calculoMenu();
+                        do {
+                            menu.calculoMenu();
+                            selectedOption = scanner.nextInt();
+                            Calculo calculo = new Calculo();
+                            calculo.calculo(selectedOption);
+                        } while (selectedOption != 2);
                         break;
                     case 5:
                         exit = true;
@@ -33,8 +52,7 @@ public class Main {
                         System.out.println("Unicamente son validos los números entre 1 y 5");
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Valor invalido, ingresa un numero");
-                scanner.next();
+                throw new InputMismatchException("Unicamente son validos valores numericos");
             }
         }
         while (!exit) ;
