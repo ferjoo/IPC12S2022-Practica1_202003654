@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class Estadistica {
     static Scanner scanner = new Scanner(System.in);
-    static String data;
+    static String[] data;
     static int totalData = 0;
     static int dataCounter = 0;
     static double average = 0;
@@ -40,16 +40,22 @@ public class Estadistica {
         }
     }
     private static void ingresarDatos() {
-        System.out.println("Ingresa los datos a analizar sin espacio y separados por una coma");
-        data = scanner.nextLine();
+        System.out.println("Ingrese la cantidad de datos que desea ingresar");
+        totalData = scanner.nextInt();
+        data = new String[totalData];
+        for (int i = 0; i < totalData; i++) {
+            // set all the values in the same line
+            System.out.println("Ingrese el dato " + (i + 1));
+            data[i] = scanner.next();
+        }
     }
 
     private static void  separateData() {
         // Separate the data by comma with the split
         dataCounter=0;
         totalData=0;
-        for (String number : data.split(",")) {
-            int num = Integer.parseInt(number);
+        for (int i = 0; i < data.length; i++) {
+            int num = Integer.parseInt(data[i]);
             totalData += num;
             dataCounter++;
         }
@@ -59,12 +65,12 @@ public class Estadistica {
     private static void moda() {
         int higherNumber=-1;
         int totalHigherNumer=0;
-        for (String number : data.split(",")) {
-            int num = Integer.parseInt(number);
+        for (int i = 0; i < data.length; i++) {
+            int num = Integer.parseInt(data[i]);
             int sumNumberTotal = 0;
             // for each number, count the number of times it appears in the data
-            for (String numberLoop : data.split(",")) {
-                int numLoop = Integer.parseInt(numberLoop);
+            for (int j = 0; j < data.length; j++) {
+                int numLoop = Integer.parseInt(data[j]);
                 if (num == numLoop && num != higherNumber) {
                     sumNumberTotal++;
                 }
@@ -79,8 +85,8 @@ public class Estadistica {
     }
     private static void calcVariance() {
         double sumVariance=0;
-        for (String number : data.split(",")) {
-            int num = Integer.parseInt(number);
+        for (int i = 0; i < data.length; i++) {
+            int num = Integer.parseInt(data[i]);
             double subVariance = ((double) num - average);
             sumVariance += subVariance * subVariance;
         }
